@@ -29,6 +29,7 @@ public class Server {
 		server = new ServerSocket(port);
 		while(started){
 			client = server.accept();
+			System.out.println("new connection received from " + client.getInetAddress());
 			new ListenerThread(client).start();
 		}
 		
